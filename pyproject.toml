@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "so-vits-svc-ws"
-version = "0.1.0"
+version = "4.1.1"
 description = ""
 authors = ["None"]
 license = "AGPL-3.0"
