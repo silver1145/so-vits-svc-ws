@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "so-vits-svc-ws"
+version = "0.1.0"
+description = ""
+authors = ["None"]
+license = "AGPL-3.0"
+packages = [{include = "so_vits_svc_ws"}]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+torch = {version = "^2.0.1+cu118", source = "torch-repo"}
+torchaudio = {version = "^2.0.2+cu118", source = "torch-repo"}
+so-vits-svc-fork = "^4.1.1"
+
+[tool.poetry.dev-dependencies]
+isort = "^5.12.0"
+black = "^23.3.0"
+
+[[tool.poetry.source]]
+name = "torch-repo"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "supplemental"
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[tool.poetry.scripts]
+svc-ws = "so_vits_svc_ws.main:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
