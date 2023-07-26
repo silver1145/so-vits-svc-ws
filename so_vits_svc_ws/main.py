@@ -1,11 +1,11 @@
 from __future__ import annotations
 
 import os
-import json
-import socket
 import sys
+import json
 import time
 import base64
+import socket
 import asyncio
 import threading
 from io import BytesIO
@@ -19,6 +19,7 @@ import librosa
 import uvicorn
 import soundfile
 import PySimpleGUI as sg
+from patch import patch
 from so_vits_svc_fork import __version__
 from so_vits_svc_fork.inference.core import Svc
 from so_vits_svc_fork.utils import get_optimal_device
@@ -28,6 +29,7 @@ GUI_DEFAULT_PRESETS_PATH = Path(__file__).parent / "default_gui_presets.json"
 GUI_PRESETS_PATH = Path("./user_gui_presets.json").absolute()
 
 LOG = getLogger(__name__)
+patch()
 
 
 class ConnectionManager:
